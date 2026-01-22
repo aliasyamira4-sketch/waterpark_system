@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background:#0b1c24;
+    color:white;
+}
+
+/* ===== WATERPARK STYLE PAGE ===== */
+.wp-gallery{
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.wp-gallery-main{
+    position: relative;
+    height: 340px;
+}
+
+.wp-gallery-main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.wp-gallery-main img.active{
+    display: block;
+}
+
+.wp-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+.wp-arrow:hover{ background: rgba(255,255,255,0.35); }
+.wp-arrow.left{ left: 12px; }
+.wp-arrow.right{ right: 12px; }
+
+.wp-thumbs{
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    overflow-x: auto;
+    background: rgba(0,0,0,0.25);
+}
+.wp-thumb{
+    width: 140px;
+    height: 78px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+.wp-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wp-thumb.active{
+    border: 2px solid rgba(0,198,255,0.9);
+}
+
+/* Tabs */
+.wp-tabs{
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.wp-tab-btn{
+    min-width: 220px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.10);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.wp-tab-btn.active{
+    background: rgba(0,198,255,0.25);
+    border: 1px solid rgba(0,198,255,0.35);
+}
+.wp-tab-panel{
+    margin-top: 14px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    display: none;
+}
+.wp-tab-panel.show{ display: block; }
+
+/* Ticket options */
+.wp-section-title{
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: 900;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.wp-ticket-list{
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.wp-ticket-card{
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.wp-ticket-card h3{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+.wp-ticket-card p{
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.wp-ticket-price{
+    font-size: 18px;
+    font-weight: 900;
+}
+.wp-ticket-right{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.wp-select-btn{
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: #00c6ff;
+    color: #002533;
+    text-decoration: none;
+    font-weight: 900;
+    border: none;
+}
+.wp-select-btn:hover{ background: #00a7d8; }
+
+/* Booking Form */
+.form-box{
+    max-width: 650px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 16px;
+    padding: 22px;
+}
+.form-box h2{
+    font-size: 26px;
+    font-weight: 900;
+}
+.form-group{
+    margin-top: 14px;
+}
+.form-group label{
+    display:block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.form-group input{
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.10);
+    color: white;
+    outline:none;
+}
+.btn{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 18px;
+    border: none;
+    cursor:pointer;
+    font-weight: 900;
+    background:#00c6ff;
+    color:#002533;
+}
+.btn:hover{ background:#00a7d8; }
+.alert{
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,0,0,0.2);
+    border: 1px solid rgba(255,0,0,0.3);
+}
+.success{
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0,255,0,0.18);
+    border: 1px solid rgba(0,255,0,0.25);
+}
+/* ===== Accordion style (like Adventure Waterpark) ===== */
+.wp-details{
+    margin-top: 12px;
+    width: 100%;
+}
+
+.wp-details summary{
+    cursor: pointer;
+    font-weight: 900;
+    opacity: 0.95;
+    padding: 8px 0;
+}
+
+.wp-details summary:hover{
+    opacity: 1;
+}
+
+.wp-details-body{
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.92;
+    line-height: 1.7;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 14px;
+}
+/* ===== Quantity selector ===== */
+.qty-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.qty-btn{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.qty-btn:hover{
+    background: rgba(255,255,255,0.18);
+}
+
+.qty-input{
+    width: 90px !important;
+    text-align: center;
+    font-weight: 900;
+}
+.total-box{
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0,198,255,0.12);
+    border: 1px solid rgba(0,198,255,0.22);
+}
+.qty-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.qty-btn{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.qty-btn:hover{
+    background: rgba(255,255,255,0.18);
+}
+
+.qty-input{
+    width: 90px !important;
+    text-align: center;
+    font-weight: 900;
+}
+
+.total-box{
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0,198,255,0.12);
+    border: 1px solid rgba(0,198,255,0.22);
+}
+.wp-tab-btn{
+    text-decoration: none !important;
+}
+/* ===== Payment UI ===== */
+.pay-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.pay-card{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    transition: 0.2s;
+}
+
+.pay-card:hover{
+    background: rgba(255,255,255,0.12);
+}
+
+.pay-card input{
+    transform: scale(1.25);
+}
+
+.pay-icon{
+    font-size: 28px;
+}
+
+.pay-title{
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.pay-sub{
+    opacity: 0.85;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+@media(max-width:900px){
+    .pay-grid{ grid-template-columns: 1fr; }
+}
+
+.qr-box{
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(0,198,255,0.10);
+    border: 1px solid rgba(0,198,255,0.22);
+}
+
+.fake-qr{
+    width: 160px;
+    height: 160px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.15);
+    border: 1px dashed rgba(255,255,255,0.35);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+@media print{
+  body{
+    background:white !important;
+    color:black !important;
+  }
+  .success-card{
+    background:white !important;
+    border: 1px solid #ddd !important;
+  }
+  .btn, .badge{
+    display:none !important;
+  }
+}
+.qrbox{
+    margin-top:18px;
+    text-align:center;
+    padding:16px;
+    border-radius:16px;
+    background:rgba(0,198,255,0.10);
+    border:1px solid rgba(0,198,255,0.22);
+}
+.coming-soon::after,
+.coming-soon::before{
+  content: none !important;
+  display: none !important;
+}
